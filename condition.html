@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="condition.css">
+</head>
+<body>
+    <button onclick="changeColor()">change Background</button>
+</body>
+</html>
+<script>
+    document.body.style.backgroundColor = 'white'
+    function changeColor() {
+        let body = document.body
+        body.style.backgroundColor = 'cyan' ? body.style.backgroundColor = 'darkgreen' : body.style.backgroundColor = 'cyan'
+    }
+    function showAndHide(params) {
+        if (passwordInput.type === 'password') {
+            passwordInput.type = `text`
+        }else {
+            passwordInput.type = 'password'
+        }
+    }
+</script>

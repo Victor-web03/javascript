@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let mydate = new Date()
+    console.log(mydate.toUTCString());
+
+    let todaysDate = new Date('Sat Sep 03 2022 5:9:23 GMT+0100 (West Africa Standard Time)')
+    console.log(dateFormat(todaysDate))
+    function dateFormat(date) {
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+
+        function addVal(val) {
+            if (val < 10 ) {
+                val = `0${val}`
+                return val
+
+            }
+            return val
+        }
+
+        hours = addVal(hours)    
+        minutes = addVal(minutes)
+        let time = Number(hours) > 11 ? 'pm' : 'am'
+
+        if(Number(hours) > 12){
+            if (Number(hours) > 21) {
+               hours = hours - 12 
+            }else {
+                hours = `0${hours - 12}`
+            }
+           
+        } else {
+            hours = hours
+        }
+
+        return `${hours}:${minutes} ${time}`
+    } 
+    
+    
+
+
+</script>

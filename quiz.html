@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    const products = [
+        { product: 'banana', price: 3 },
+        { product: 'mango', price: 6 },
+        { product: "potato", price: '' },
+        { product: "avocado'", price: 8 },
+        { product: "coffee'", price: 10 },
+        { product: "tea'", price: '' }
+    ]
+    // find the total price of products by chaining two or more array iterators
+
+    const totalPrice = products
+        .filter(product => product.price === 'number' && product.price > 0)
+        .map(product => product.price)
+        .reduce((acc, current) => acc + current, 0);
+    console.log(`the totalprice of product is ${totalPrice}`);
+
+
+</script>

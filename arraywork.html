@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button id="button">calculate</button>
+</body>
+
+</html>
+<script>
+    const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+    ages.sort()
+    console.log(ages);
+
+    // let median
+    // if (ages.length % 2 === 0) {
+    //     let value1 = ages.length / 2
+    //     median = (ages[value] + ages[value1 - 1]) / 2
+    // } else {
+    //     let arrLength = ages.length
+    //     let index = (arrLength - 1) / 2
+    //     median = ages[index]
+    // }
+    // console.log(median)
+
+    let sum = 0
+    for (let i = 0; i < ages.length; i++) {
+        sum += ages[i]
+    }
+
+
+
+    (function hello() {
+        console.log('hello')
+    }())
+
+    let ourfunc = function (params) {
+        console.log('hello');
+    }
+
+    ourfunc()
+
+
+    let jumper = () => {
+        console.log('jumper')
+    }
+
+    jumper()
+
+    function calculator(a = 2, b = 3) {
+        return a * b
+    }
+
+    console.log(calculator(5, 4))
+    calculator(6, 25)
+    console.log(calculator(5))
+
+    function calculator(a = 0, b = 0, c = 'add') {
+        if (c === 'multiply') {
+            return a * b
+        } else if (c === 'divide') {
+            return a / b
+        }
+        return a + b
+
+
+
+    }
+
+    function calculateMassAndWeight(a, b, gravity) {
+        let mass = a * b
+        return function calculateAns(gravity) {
+            return mass * gravity
+        }
+
+    }
+    console.log(calculateMassAndWeight(10, 10, (9.81)));
+
+    // function areaOfCircle(area) {
+    //     let area = r * r
+    //     return function area (pi, r){
+    //        return pi * r
+    //     }
+    // }
+    // console.log(areaOfCircle);
+
+    let input = document.getElementById('input')
+    let button = document.getElementById('button')
+
+    button.addEventListener('click', function (params) {
+        let paragraphTag = document.getElementById('p')
+        let inputValue = input.value
+        paragraphTag.innerHTML = areaofCircle(inputValue)
+        document.body.appendChild(paragraphTag)
+    })
+
+    function areaofCircle(params) {
+        return `the area of the circle with radius ${params} is ${Math.PI * (params ** 2)}`
+
+    }
+</script>

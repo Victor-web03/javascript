@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="inputScore">
+    <button onclick="check()">check score</button>
+</body>
+
+</html>
+<script>
+    // input a code which can give grades to student according to their scores;
+    // 80-100, A
+    // 70-79, B
+    // 60-69 ,C
+    // 50-59 ,D
+    // 0-49 , F
+
+    function check() {
+        let inputValue = document.getElementById('inputScore').value
+
+        if (inputValue >= 80 || inputValue <= 100) {
+            alert(`${inputValue} A`)
+        } else if (inputScore === '73') {
+            alert(`invalid number`)
+        }
+        
+        if(inputValue >=70 && inputValue <=79){
+        alert(`${inputValue} B`)
+        }else if(inputScore === '55'){
+            alert(`invalid number`)
+        }
+
+        if(inputValue >=60 && inputValue <= 69) {
+            alert(`${inputValue} C`)
+        } else if(inputScore === '46'){
+            alert(`invalid number`)
+        }
+
+        if(inputValue >=50 && inputValue <= 59) {
+            alert(`${inputValue} D`)
+        } else if(inputScore === '46'){
+            alert(`invalid number`)
+        }
+
+        if(inputValue >=0 && inputValue <= 49) {
+            alert(`${inputValue} F`)
+        } else if(inputScore === '-5'){
+            alert(`invalid number`)
+        }else(
+            alert(`enter a valid number`)
+        )
+
+
+    
+    }
+</script>

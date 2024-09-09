@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+
+</html>
+<script>
+    let currentUser = JSON.parse(localStorage.getItem('loggedInUser'))
+    console.log(currentUser);
+
+    if (!currentUser) {
+        alert('unauthorised')
+        document.body.innerHTML = 'loading...'
+        window.location.href = 'Login.html'
+
+    } else {
+        document.body.innerHTML = `<div>
+    <span>welcome ${currentUser.username}</span>
+    <button onclick="logOut()"> Log Out </button>
+    </div>
+<div> 
+<video width="600" height="400" id="image" controls >     
+   <source  type="video/mp4">
+</video>
+<input id="input" accept=".jpg,.png,.mp4" type="file" onchange="pickFile(event)" /> </div>
+
+
+`
+    }
+
+    // let input = document.getElementById('input')
+    function pickFile(e) {
+        let file = e.target.files[0]
+        let reader = new FileReader()
+
+        if (file) {
+            reader.readAsDataURL(file)
+        }
+
+        reader.addEventListener('load', (ev) => {
+            image.src = ev.target.result
+            image.style.display = "block"
+        })
+    }
+
+
+
+    function logOut() {
+        localStorage.removeItem('loggedInUser')
+        window.location.href = 'Login.html'
+    }
+
+    let myDate = new Date()
+    console.log(myDate.toUTCString());
+
+
+    let todaysDate = new Date('Sat Sep 03 2022 22:9:23 GMT+0100 (West Africa Standard Time)')
+    console.log(dateFormatter(todaysDate));
+
+    function dateFormatter(date) {
+        let hours = date.getHours()
+        let minutes = date.getMinutes()
+        let seconds = date.getSeconds()
+
+        function addVal(val) {
+            if (val < 10) {
+                val = `0${val}`
+                return val
+            }
+            return val
+        }
+
+
+
+        hours = addVal(hours)
+        minutes = addVal(minutes)
+        seconds = addVal(seconds)
+        let time = Number(hours) > 11 ? 'pm' : 'am'
+
+        if (Number(hours) > 12) {
+            if (Number(hours) > 21) {
+                hours = hours - 12
+            } else {
+                hours = `0${hours - 12}`
+            }
+        } else {
+            hours = hours
+        }
+
+
+        return `${hours}:${minutes} ${time}`
+    }
+
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input">
+    <button onclick="check()">Enter</button>
+    
+</body>
+
+</html>
+<script>
+    function check(params) {
+        let inputValue = document.getElementById('input').value.toLowerCase().trim()
+
+        if (inputValue === "february") {
+            alert(`${inputValue} has 29 days`)
+        } else if (inputValue === "january" || inputValue === "march" || inputValue === "may" || inputValue === "july" ||
+            inputValue === "august" || inputValue === "october" || inputValue === "december") {
+            alert(`${inputValue} has 31 days`)
+        } else if (inputValue === "september" || inputValue === "april" || inputValue === "june" || inputValue ===
+            "november") {
+            alert(`${inputValue} has 30 days`)
+        } else if (inputValue === '') {
+            alert(`you didn\'t enter anything`)
+        } else (
+            alert(`please, enter a valid month`)
+        )
+
+    }
+</script>

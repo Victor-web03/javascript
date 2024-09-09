@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <style>
+        .main{
+            width: 777px;
+            height: 777px;
+            margin: auto;
+        }
+        .body{
+            width: 333px;
+            height: 277px;
+            border: 1px solid black;
+            background-color: aquamarine;
+            margin: auto;
+            margin-top: 55px;
+            border-radius: 11px;
+        }
+        .buts{
+            width: 444px;
+            height: 44px;
+            display: flex;
+            justify-content: space-between;
+            margin: auto;
+            margin-top: 22px;
+        }
+        button{
+            width: 77px;
+            height: 22px;
+            border-radius: 3px;
+            border: 1px solid black;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="body">
+
+        </div>
+        <div class="buts">
+            <button onclick="prev()">Previous</button>
+            <button onclick="next()">Next</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    const peeps = {
+        Moh: {
+            age: 22 ,
+            Experience: '5 years' , 
+            Status: 'Employed' ,
+            Hobby: 'Working' ,
+            color: 'red'
+        },
+        Raph: {
+            age: 17 ,
+            Experience: '4 months' , 
+            Status: 'Un-employed' ,
+            Hobby: 'Playing' ,
+            color: 'green'
+        },
+        Leo: {
+            age: 19 ,
+            Experience: '1 years' , 
+            Status: 'Un-mployed' ,
+            Hobby: 'Coding' ,
+            color: 'blue'
+        },
+        Salam: {
+            age: 27 ,
+            Experience: '8 years' , 
+            Status: 'Employed' ,
+            Hobby: 'Chilling' , 
+            color: 'yellow'
+        }
+    }
+
+    let body = document.querySelector('.body')
+
+    let obj = Object.keys(peeps)
+    let index = 0
+
+    function change() {
+        let people = peeps[obj[index]]
+        document.querySelector('.body').innerHTML = `<h3>Name: ${peeps[obj]}<br>age: ${people.age}<br>Experience: ${people.Experience}<br>Status: ${people.Status}<br>Hobby: ${people.Hobby}</h3>`
+        document.querySelector('.body').style.background = people.color
+    }
+    
+    function next() {
+        index = (index + 1) % obj.length;
+        change();
+    }
+
+    setInterval(() => {
+        index = (index + 1) % obj.length;
+        change();
+    }, 3000);
+    
+
+    function prev() {
+        index = (index - 1) % obj.length;
+        change();
+    }
+    
+</script>

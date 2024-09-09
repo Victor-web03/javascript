@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="input">
+    <button onclick="push()" id="push">push</button>
+    <button onclick="pop()" id="pop">pop</button>
+</body>
+
+</html>
+<script>
+    
+    let array = []
+    function push() {
+         let input = document.getElementById('input').value
+         console.log(input);
+         
+         array.push(input)
+         console.log(array)
+        
+     }
+     function pop(){
+        array.pop()
+        console.log()
+     }
+    
+</script>

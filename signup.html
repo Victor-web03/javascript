@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+
+    <section> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span> <span></span>
+        <span></span> <span></span> <span></span> <span></span> <span></span>
+
+        <div class="signin">
+
+            <div class="content">
+
+                <h2>Sign Up</h2>
+
+                <form class="form">
+
+                    <div class="inputBox">
+
+                        <input id="name" type="text" required> <i>Username</i>
+
+                    </div>
+                    <div class="inputBox">
+
+                        <input id="email" type="email" required> <i>Email</i>
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <input id="url" type="portfolioURL" required> <i>Porfolio URL</i>
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <input id="password" type="password" required> <i>Password</i>
+
+                    </div>
+
+                    <div class="inputBox">
+
+                        <input id="confirmpassword" type="confirmpassword" required onkeyup="passwordConfirmation()">
+                        <i>Confirm Password</i>
+                        <p id="pp" style="color: white;"></p>
+                    </div>
+
+                    <div class="links"> <a href="#"> Already have an account </a> <a href="#">Signin</a>
+
+                    </div>
+
+                    <div class="inputBox">
+                        <button onclick="signUp()">
+                            signup
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section> <!-- partial -->
+
+
+
+</body>
+
+</html>
+<script>
+    const username = document.getElementById("name")
+
+    const nameRegex = /^\w{5,}$/
+    const emailRegex = /^[a-zA-Z0-9_]+@[a-zA-Z]{5,7}.com$/
+    const passwordRegex = /^[a-zA-Z0-9_]{8,}$/
+
+    const urlRegex = /^https:[/]{2}[a-z.]+.[a-z]{2,3}$/
+    console.log(urlRegex.test("https://dashboard.com"));
+    let email = document.getElementById("email")
+    let arr = JSON.parse(localStorage.getItem('account')) || []
+
+    function signUp() {
+        if (!emailRegex.test(email.value)) {
+            alert("Invalid email")
+        }
+        else if (!passwordRegex.test(password.value)) {
+            alert('Invalid password. Password must be at least 8 characters long comprises of block and lower case include an underscore')
+        }
+        else if (!url.value.match(urlRegex)) {
+            alert("url not secure !!!!")
+        }
+
+        else if (confirmpassword.value !== password.value) {
+            alert(`password mismatch`)
+        } else if (arr.find((userObject) => { return userObject.email === email.value })) {
+            alert('Email already in used, use another email')
+        }
+
+        else {
+            let userObject = {
+                username: username.value,
+                email: email.value,
+                password: password.value,
+                URL: url.value
+            }
+            arr.push(userObject)
+            localStorage.setItem('account', JSON.stringify(arr))
+            window.location.href = 'login.html'
+            alert('sign up success')
+
+        }
+    }
+
+    let show = document.getElementById('pp')
+    show.style.display = 'none'
+    function passwordConfirmation() {
+        if (confirmpassword.value !== password.value) {
+            show.style.display = 'block'
+            show.innerHTML = 'password Mismatch'
+        } else {
+            show.style.display = 'none'
+            // show.innerHTML = 'Authenticated'
+        }
+
+    }
+
+//   else if ( postArr)
+
+
+
+
+
+</script>

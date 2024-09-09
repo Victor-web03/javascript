@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="color.css">
+</head>
+
+<body>
+    <div class="div1">
+        <h1>QUIZ</h1>
+        <h3> Write a function generateColors which can generate any number of Hexa or rgb colors</h3>
+    </div>
+</body>
+
+</html>
+<script>
+    // function generateColor(color, amount) {
+    //     let hexaColors = []
+    //     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 'a', 'b', 'c', 'd', 'e', 'f']
+
+    //     for (let index = 0; index < amount; index++) {
+    //         let hexa = '#'
+    //         for (let index = 0; index < 6; index++) {
+    //             let randomNum = Math.floor(Math.random() * 16)
+    //             hexa += arr[randomNum]
+    //         }
+
+    //         hexaColors.push(hexa)
+
+    //     }
+
+    //     return hexaColors
+    // }
+    // function generateColor(color,amount) {
+
+    // }
+
+    function generateColor(type, count) {
+        let hexaColors = [];
+        for (let index = 0; index<count; index++) {
+            if (type === 'hexa') {
+                let hexa = '#' + Math.floor(Math.random() * 16777215). toString(16) ;
+                hexaColors.push(hexa);
+            }else if(type === 'rgb'){
+                let r = Math.floor(Math.random()*256);
+                let g = Math.floor(Math.random()*256);
+                let b = Math.floor(Math.random()*256);
+                hexaColors.push(`rgb(${r}, ${g}), ${b}`);
+            }
+
+            
+
+        }
+        return hexaColors;
+
+
+    }
+
+    console.log(generateColor('hexa',3)); //['#a3c12f', '#03ed55', '#eb3d2b']
+    console.log(generateColor('rgb',1)); //['rgb(33, 79, 176)']
+
+</script>
